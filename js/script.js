@@ -90,17 +90,26 @@ document.addEventListener('DOMContentLoaded', function() {
         submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Procesando...';
         
         // Enviar datos
-        fetch('php/process_booking.php', {
+        fetch('https://formspree.io/f/xeovqnrq', {
             method: 'POST',
-            body: formData
+            body: formData,
+            headers: { 'Accept': 'application/json' }
         })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                showSuccessMessage(data);
-            } else {
-                showErrorMessage(data.message || 'Error al procesar la reserva');
+        .then(async response => {
+            if (response.ok) {
+                showSuccessMessage();
+                return;
             }
+            let message = 'Error al procesar la reserva';
+            try {
+                const data = await response.json();
+                if (data && data.errors) {
+                    message = data.errors.map(e => e.message).join(', ');
+                }
+            } catch (e) {
+                // ignore parse error, keep default message
+            }
+            showErrorMessage(message);
         })
         .catch(error => {
             console.error('Error:', error);
