@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Precios - BeeNails</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1><i class="fas fa-gem"></i> BeeNails</h1>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="proceso.html" class="nav-link active">Nuestro Proceso</a>
+                <a href="turnos.html" class="nav-link">Reservar Turno</a>
+                <a href="registro.html" class="nav-link">Crear Cuenta</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1>Calculadora de Precios</h1>
+                <p>Elegí tus diseños favoritos y calculá el total de tu servicio</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Selector Section -->
+    <section class="price-section">
+        <div class="container">
+            <div class="process-intro">
+                <h2>Seleccioná tus diseños</h2>
+                <p>Tocá para seleccionar o deseleccionar. Al final de la página verás el total.</p>
+            </div>
+
+            <div class="price-grid">
+                <div class="price-card" data-price="12000" data-name="Clásicas">
+                    <div class="price-image">
+                        <img src="images/process1.jpg" alt="Uñas clásicas">
+                        <span class="price-badge">$12.000</span>
+                    </div>
+                    <div class="price-info">
+                        <h3>Clásicas</h3>
+                        <p>Look natural y elegante</p>
+                    </div>
+                </div>
+                <div class="price-card" data-price="15000" data-name="Gel UV/LED">
+                    <div class="price-image">
+                        <img src="images/process2.jpg" alt="Gel UV/LED">
+                        <span class="price-badge">$15.000</span>
+                    </div>
+                    <div class="price-info">
+                        <h3>Gel UV/LED</h3>
+                        <p>Mayor durabilidad y brillo</p>
+                    </div>
+                </div>
+                <div class="price-card" data-price="18000" data-name="Acrílico">
+                    <div class="price-image">
+                        <img src="images/process3.jpg" alt="Acrílico">
+                        <span class="price-badge">$18.000</span>
+                    </div>
+                    <div class="price-info">
+                        <h3>Acrílico</h3>
+                        <p>Extensión y refuerzo</p>
+                    </div>
+                </div>
+                <div class="price-card" data-price="22000" data-name="Nail Art">
+                    <div class="price-image">
+                        <img src="images/process4.jpg" alt="Nail Art">
+                        <span class="price-badge">$22.000</span>
+                    </div>
+                    <div class="price-info">
+                        <h3>Nail Art</h3>
+                        <p>Diseños personalizados</p>
+                    </div>
+                </div>
+                <div class="price-card" data-price="8000" data-name="Spa manos">
+                    <div class="price-image">
+                        <img src="images/process5.jpg" alt="Spa de manos">
+                        <span class="price-badge">$8.000</span>
+                    </div>
+                    <div class="price-info">
+                        <h3>Spa manos</h3>
+                        <p>Hidratación y cuidado</p>
+                    </div>
+                </div>
+                <div class="price-card" data-price="6000" data-name="Spa pies">
+                    <div class="price-image">
+                        <img src="images/quality.jpg" alt="Spa de pies">
+                        <span class="price-badge">$6.000</span>
+                    </div>
+                    <div class="price-info">
+                        <h3>Spa pies</h3>
+                        <p>Relajación total</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-panel">
+                <div class="calculator-summary">
+                    <h3><i class="fas fa-calculator"></i> Total</h3>
+                    <div class="calculator-details">
+                        <span id="items-seleccionados">0 seleccionados</span>
+                        <span id="total-calculado" class="total-amount">$0</span>
+                    </div>
+                </div>
+                <div class="calculator-actions">
+                    <button id="limpiar-seleccion" class="btn btn-secondary">
+                        <i class="fas fa-undo"></i> Limpiar selección
+                    </button>
+                    <a href="turnos.html" class="btn btn-primary">
+                        <i class="fas fa-calendar-check"></i> Reservar con este total
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-gem"></i> BeeNails</h3>
+                    <p>Transformando uñas en obras de arte desde 2020</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> +57 300 123 4567</p>
+                    <p><i class="fas fa-envelope"></i> info@nailstudio.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Calle 123 #45-67, Bogotá</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Horarios</h4>
+                    <p>Lunes - Viernes: 9:00 AM - 7:00 PM</p>
+                    <p>Sábados: 9:00 AM - 5:00 PM</p>
+                    <p>Domingos: Cerrado</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BeeNails. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

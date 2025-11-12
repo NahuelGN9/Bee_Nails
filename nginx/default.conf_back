@@ -1,0 +1,15 @@
+server {
+    listen 80;
+    server_name beenails.com.ar www.beenails.com.ar;
+
+    # LetsEncrypt webroot
+    location /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+    }
+
+    # Resto del tráfico
+    location / {
+        root /usr/share/nginx/html;
+        index index.php index.html;
+    }
+}
