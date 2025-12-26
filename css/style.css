@@ -55,7 +55,7 @@ body {
 }
 
 .nav.nav-simple {
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .nav-brand h1 {
@@ -179,6 +179,52 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.nail-mosaic {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 520px;
+}
+
+.nail-mosaic-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.nail-mosaic-img:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+@media (max-width: 900px) {
+    .nail-mosaic {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 520px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .hero-content {
+        margin-right: 0;
+        max-width: 100%;
+    }
+
+    .nail-mosaic {
+        grid-template-columns: repeat(5, 1fr);
+        max-width: 420px;
+    }
 }
 
 .nail-gallery {
