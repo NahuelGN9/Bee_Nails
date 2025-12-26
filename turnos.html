@@ -19,7 +19,6 @@
                 <a href="index.html" class="nav-link">Inicio</a>
                 <a href="proceso.html" class="nav-link">Nuestro Proceso</a>
                 <a href="turnos.html" class="nav-link active">Reservar Turno</a>
-                <a href="registro.html" class="nav-link">Crear Cuenta</a>
             </div>
         </nav>
     </header>
@@ -72,8 +71,16 @@
                         </div>
 
                         <!-- Service Selection -->
-                        <div class="form-section">
+                        <div class="form-section" id="service-section">
                             <h3><i class="fas fa-hand-paper"></i> Servicio</h3>
+
+                            <!-- Resumen de servicio proveniente de la calculadora -->
+                            <div id="service-summary" class="info-card" style="display: none; margin-bottom: 1.5rem;">
+                                <h3><i class="fas fa-list"></i> Servicio seleccionado</h3>
+                                <p id="service-summary-text"></p>
+                            </div>
+
+                            <!-- Selección normal de servicio -->
                             <div class="service-selection">
                                 <div class="service-option">
                                     <input type="radio" id="manicura" name="servicio" value="manicura" required>
@@ -107,6 +114,9 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Campo oculto para enviar el resumen de servicio -->
+                        <input type="hidden" id="servicio_resumen" name="servicio_resumen" value="">
 
                         <!-- Date and Time -->
                         <div class="form-section">
