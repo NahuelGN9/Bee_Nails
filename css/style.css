@@ -183,15 +183,18 @@ body {
 
 .nail-mosaic {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    --mosaic-size: clamp(44px, 7vw, 86px);
+    grid-template-columns: repeat(5, var(--mosaic-size));
+    grid-auto-rows: var(--mosaic-size);
     gap: 0.75rem;
-    width: 100%;
-    max-width: 520px;
+    width: fit-content;
+    max-width: 100%;
+    justify-content: center;
 }
 
 .nail-mosaic-img {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    height: 100%;
     object-fit: cover;
     border-radius: 10px;
     box-shadow: var(--shadow);
@@ -201,13 +204,6 @@ body {
 .nail-mosaic-img:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-hover);
-}
-
-@media (max-width: 900px) {
-    .nail-mosaic {
-        grid-template-columns: repeat(4, 1fr);
-        max-width: 520px;
-    }
 }
 
 @media (max-width: 600px) {
@@ -222,8 +218,7 @@ body {
     }
 
     .nail-mosaic {
-        grid-template-columns: repeat(5, 1fr);
-        max-width: 420px;
+        --mosaic-size: clamp(38px, 14vw, 56px);
     }
 }
 
