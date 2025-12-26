@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(card);
     });
 
-    // Price selector and calculator (proceso.html)
+    // Price selector and calculator (página de precios)
     const priceCards = document.querySelectorAll('.price-card');
     const totalElement = document.getElementById('total-calculado');
     const countElement = document.getElementById('items-seleccionados');
