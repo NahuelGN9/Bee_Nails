@@ -26,13 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Validación del formulario
     function validateForm() {
-        const nombre = document.getElementById('nombre') ? document.getElementById('nombre').value.trim() : '';
-        const telefono = document.getElementById('telefono') ? document.getElementById('telefono').value.trim() : '';
-        const servicioSeleccionado = document.querySelector('input[name="servicio"]:checked');
-        const resumenServicioInput = document.getElementById('servicio_resumen');
-        const fecha = document.getElementById('fecha') ? document.getElementById('fecha').value : '';
-        const hora = document.getElementById('hora') ? document.getElementById('hora').value : '';
-
+        const nombre = document.getElementById('nombre').value.trim();
+        const telefono = document.getElementById('telefono').value.trim();
+        const servicio = document.querySelector('input[name="servicio"]:checked');
+        const fecha = document.getElementById('fecha').value;
+        const hora = document.getElementById('hora').value;
+        
         let isValid = true;
         let errorMessage = '';
         
@@ -46,10 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
             errorMessage += 'El teléfono es requerido.\n';
             isValid = false;
         }
-
-        // Debe haber servicio seleccionado por radio o un resumen proveniente de la calculadora
-        const tieneResumenServicio = resumenServicioInput && resumenServicioInput.value.trim() !== '';
-        if (!servicioSeleccionado && !tieneResumenServicio) {
+        
+        if (!servicio) {
             errorMessage += 'Debe seleccionar un servicio.\n';
             isValid = false;
         }
@@ -257,7 +254,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalElement = document.getElementById('total-calculado');
     const countElement = document.getElementById('items-seleccionados');
     const clearButton = document.getElementById('limpiar-seleccion');
-    const reservarConTotalBtn = document.getElementById('reservar-con-total');
 
     if (priceCards.length && totalElement && countElement) {
         const formatCurrency = (n) => '$' + Number(n).toLocaleString('es-AR');
@@ -288,53 +284,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        if (reservarConTotalBtn) {
-            reservarConTotalBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-
-                // Obtener selección actual
-                const seleccionados = Array.from(document.querySelectorAll('.price-card.selected'));
-                if (!seleccionados.length) {
-                    alert('Primero seleccioná al menos un servicio en la calculadora.');
-                    return;
-                }
-
-                const items = seleccionados.map(c => c.getAttribute('data-name')).filter(Boolean);
-                let total = 0;
-                seleccionados.forEach(c => {
-                    total += Number(c.getAttribute('data-price')) || 0;
-                });
-
-                const resumenTexto = `Servicios: ${items.join(', ')} | Total estimado: $${Number(total).toLocaleString('es-AR')}`;
-
-                const params = new URLSearchParams();
-                params.set('resumen', resumenTexto);
-
-                window.location.href = 'turnos.html?' + params.toString();
-            });
-        }
-
         // Initial calc
         recalc();
-    }
-
-    // Leer resumen de servicio en turnos.html (si viene desde la calculadora)
-    const urlParams = new URLSearchParams(window.location.search);
-    const resumenServicio = urlParams.get('resumen');
-    const serviceSummary = document.getElementById('service-summary');
-    const serviceSummaryText = document.getElementById('service-summary-text');
-    const servicioResumenInput = document.getElementById('servicio_resumen');
-    const serviceSelectionContainer = document.querySelector('.service-selection');
-
-    if (resumenServicio && serviceSummary && serviceSummaryText && servicioResumenInput) {
-        serviceSummary.style.display = 'block';
-        serviceSummaryText.textContent = resumenServicio;
-        servicioResumenInput.value = resumenServicio;
-
-        // Ocultar las tarjetas de servicio estándar para que no haya confusión
-        if (serviceSelectionContainer) {
-            serviceSelectionContainer.style.display = 'none';
-        }
     }
 });
 
