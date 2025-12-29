@@ -1,0 +1,47 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="nailGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fdcb6e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e17055;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="nailGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffeaa7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fdcb6e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="#f8f4f0"/>
+  
+  <!-- Hand outline -->
+  <path d="M 200 50 Q 150 60 120 100 Q 100 140 110 180 Q 120 220 160 240 Q 200 250 240 240 Q 280 220 290 180 Q 300 140 280 100 Q 250 60 200 50 Z" fill="#f4e4c1" stroke="#d4af37" stroke-width="2"/>
+  
+  <!-- Nails -->
+  <!-- Thumb nail -->
+  <ellipse cx="180" cy="80" rx="15" ry="20" fill="url(#nailGradient1)" transform="rotate(-20 180 80)"/>
+  
+  <!-- Index finger nail -->
+  <ellipse cx="200" cy="70" rx="12" ry="18" fill="url(#nailGradient1)" transform="rotate(-10 200 70)"/>
+  
+  <!-- Middle finger nail -->
+  <ellipse cx="220" cy="65" rx="12" ry="18" fill="url(#nailGradient1)" transform="rotate(5 220 65)"/>
+  
+  <!-- Ring finger nail -->
+  <ellipse cx="240" cy="70" rx="12" ry="18" fill="url(#nailGradient1)" transform="rotate(15 240 70)"/>
+  
+  <!-- Pinky nail -->
+  <ellipse cx="260" cy="80" rx="10" ry="15" fill="url(#nailGradient1)" transform="rotate(25 260 80)"/>
+  
+  <!-- Gold accents -->
+  <path d="M 195 70 L 205 70" stroke="#d4af37" stroke-width="1" opacity="0.8"/>
+  <path d="M 215 65 L 225 65" stroke="#d4af37" stroke-width="1" opacity="0.8"/>
+  <path d="M 235 70 L 245 70" stroke="#d4af37" stroke-width="1" opacity="0.8"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="200" cy="70" r="2" fill="#d4af37" opacity="0.7"/>
+  <circle cx="220" cy="65" r="2" fill="#d4af37" opacity="0.7"/>
+  <circle cx="240" cy="70" r="2" fill="#d4af37" opacity="0.7"/>
+  
+  <!-- Text -->
+  <text x="200" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#d4af37" font-weight="bold">Dorado Clásico</text>
+</svg>

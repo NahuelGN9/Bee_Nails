@@ -1,0 +1,41 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f4f0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e8b4b8;stop-opacity:0.3" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#bgGradient)"/>
+  
+  <!-- Consultation table -->
+  <rect x="50" y="200" width="300" height="80" fill="#d4af37" opacity="0.2" rx="10"/>
+  
+  <!-- Professional -->
+  <circle cx="150" cy="120" r="30" fill="#f4e4c1"/>
+  <rect x="130" y="150" width="40" height="60" fill="#d4af37" opacity="0.3" rx="5"/>
+  
+  <!-- Client -->
+  <circle cx="250" cy="120" r="30" fill="#f4e4c1"/>
+  <rect x="230" y="150" width="40" height="60" fill="#d4af37" opacity="0.3" rx="5"/>
+  
+  <!-- Hands -->
+  <ellipse cx="150" cy="180" rx="20" ry="15" fill="#f4e4c1" transform="rotate(-20 150 180)"/>
+  <ellipse cx="250" cy="180" rx="20" ry="15" fill="#f4e4c1" transform="rotate(20 250 180)"/>
+  
+  <!-- Speech bubbles -->
+  <ellipse cx="120" cy="80" rx="25" ry="15" fill="#ffffff" stroke="#d4af37" stroke-width="2"/>
+  <ellipse cx="280" cy="80" rx="25" ry="15" fill="#ffffff" stroke="#d4af37" stroke-width="2"/>
+  
+  <!-- Text in bubbles -->
+  <text x="120" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#d4af37">¿Qué estilo prefieres?</text>
+  <text x="280" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#d4af37">Algo elegante</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="80" cy="60" r="8" fill="#d4af37" opacity="0.3"/>
+  <circle cx="320" cy="60" r="8" fill="#d4af37" opacity="0.3"/>
+  
+  <!-- Title -->
+  <text x="200" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#d4af37" font-weight="bold">Consulta Inicial</text>
+</svg>
