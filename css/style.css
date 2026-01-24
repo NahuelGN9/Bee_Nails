@@ -58,6 +58,17 @@ body {
     justify-content: flex-start;
 }
 
+.nav-brand {
+    display: flex;
+    align-items: center;
+}
+
+.brand-logo {
+    height: 100px; /* 40 */
+    width: auto;
+    display: block;
+}
+
 .nav-brand h1 {
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
@@ -1311,6 +1322,10 @@ body {
         gap: 1rem;
         padding: 1rem;
     }
+
+    .brand-logo {
+        height: 70px; /* 34 */
+    }
     
     .nav-menu {
         gap: 1rem;
@@ -1416,6 +1431,10 @@ body {
 @media (max-width: 480px) {
     .hero-title {
         font-size: 2rem;
+    }
+
+    .brand-logo {
+        height: 70px; /* 30 */
     }
     
     .btn {
