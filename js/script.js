@@ -1,5 +1,65 @@
 // JavaScript para manejo del formulario de reservas
 document.addEventListener('DOMContentLoaded', function() {
+
+    const updateHeaderHeight = () => {
+        const header = document.querySelector('.header');
+        if (!header) return;
+        const height = Math.ceil(header.getBoundingClientRect().height);
+        document.documentElement.style.setProperty('--header-height', `${height}px`);
+    };
+
+    updateHeaderHeight();
+    window.addEventListener('resize', updateHeaderHeight);
+
+    const modelPhotos = document.querySelectorAll('.model-photo');
+    if (modelPhotos.length) {
+        const lightbox = document.createElement('div');
+        lightbox.className = 'lightbox';
+        lightbox.setAttribute('role', 'dialog');
+        lightbox.setAttribute('aria-modal', 'true');
+
+        const img = document.createElement('img');
+        img.className = 'lightbox-img';
+        img.alt = '';
+
+        const closeBtn = document.createElement('button');
+        closeBtn.className = 'lightbox-close';
+        closeBtn.type = 'button';
+        closeBtn.setAttribute('aria-label', 'Cerrar');
+        closeBtn.textContent = '×';
+
+        lightbox.appendChild(img);
+        lightbox.appendChild(closeBtn);
+        document.body.appendChild(lightbox);
+
+        const open = (src, alt) => {
+            img.src = src;
+            img.alt = alt || '';
+            lightbox.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const close = () => {
+            lightbox.classList.remove('is-open');
+            document.body.style.overflow = '';
+            img.src = '';
+        };
+
+        modelPhotos.forEach(p => {
+            p.addEventListener('click', () => open(p.src, p.alt));
+        });
+
+        closeBtn.addEventListener('click', close);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) close();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('is-open')) {
+                close();
+            }
+        });
+    }
     
     // Elementos del formulario
     const bookingForm = document.getElementById('bookingForm');
